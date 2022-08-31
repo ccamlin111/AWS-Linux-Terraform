@@ -1,3 +1,5 @@
+
+//Check provider version. Set Region
 terraform {
   required_providers {
     aws = {

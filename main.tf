@@ -18,11 +18,11 @@ resource "aws_instance" "iac01" {
     Phone        = "813-716-4552 or 813-826-6670"
   }
 
-  //Upload and execute script. Then test connection.
+  //Upload and execute script. Then test connection. 
   provisioner "remote-exec" {
     inline = [
       "touch loop.txt",
-      "echo hello Chet. How is your day going remote provisioner >> loop.txt",
+      "echo hello Chet. How is your day going chet >> loop.txt",
     ]
   }
 
@@ -74,9 +74,4 @@ resource "aws_security_group" "main" {
   ]
 }
 
-//Add PUB to Key Pair
-resource "aws_key_pair" "LOOP01" {
-  key_name   = "aws_key"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCp490MhyA2QMJVrtX+M/FAUHRT8MFGmO92zpxv2WiCG8nILPw5Hn5tbvVHRUsPWVscg+cDTPkspqrvjTMCkxQWg8MpZPJNQJSvLTLFNYrUsUesKXxB119hil00stkSJ1gwHdws4R8lUPQowzMwBf/oKNK2MX5/jGcRNTuWj30QnZgsbNwJelIziI8NFkEULhTLztY/vnfvZ8E7YCC+sU5+inIwiZi/0Yp/O7FQ1snWd2Yv3mPwmxUseICTynsZJ0T+m/89OXAtLkUptY/V25khrMO/aduYAfcpRB+NVN/nLybovsUnlYFaySN2fHlJBXwoubhmSAUyndqDAhBLvJv+vJicVno4AWI6X96LatzdkOJ0mWwpAAa9lSIYg23YYPt/97ZNCIsXQ0S2tifYswHM5NE5CGtUuYY2hGNo7bpPvmeY+ytfDy7ZhDwGEvBknYz/lQuvAAxX9InA+5DdvUz5LoFINiSeFkrgS4+HLwE/Nbw4d0nzjYxO0G8WrUWXizc= chest@WIN11"
-}
 
