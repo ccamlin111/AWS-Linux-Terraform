@@ -1,5 +1,5 @@
 //PRimary Resourse for EC2 VM. Using RedHat 8.6 AMI (HVM-EBS) - Kernel 5.10, SSD Volume Type
-// t2.micro 0.0162 per hour. 1V/1G
+// t2.micro 0.0162 per hour. 1V/1G. Running local now.  More to remote State when code is clean
 resource "aws_instance" "iac01" {
 
   ami                    = "ami-06640050dc3f556bb"
@@ -22,7 +22,7 @@ resource "aws_instance" "iac01" {
   provisioner "remote-exec" {
     inline = [
       "touch loop.txt",
-      "echo hello Chet. How is your day going chet >> loop.txt",
+      "echo hello Chet. How is your day going chet >> test.txt",
     ]
   }
 
@@ -73,5 +73,3 @@ resource "aws_security_group" "main" {
     }
   ]
 }
-
-
