@@ -1,4 +1,4 @@
-//Create security Group to open the proper ingress ports
+//Create security Group to open the proper ingress ports  
 resource "aws_security_group" "main" {
   tags = {
     Name        = "IAC Security Group"
